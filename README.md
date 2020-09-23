@@ -12,10 +12,10 @@ For language features or concepts with more than one word, use `-` hyphens to se
 
 ### Usage examples:
 
-`cheat python`
-`cheat bash case`
-`cheat python tuple`
-`cheat bash command-substitution`
+- `cheat python`
+- `cheat bash case`
+- `cheat python tuple`
+- `cheat bash command-substitution`
 
 ## Dependencies
 
