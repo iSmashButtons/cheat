@@ -4,7 +4,7 @@ A simple "cheat sheet" program. Enter the language you need and a keyword to see
 ## Usage
 
 |   command     |       result      |
-|:-------------:|:-----------------:|
+|---------------|:-----------------:|
 |cheat _lang_|Present all available info for _lang_|
 |cheat _lang_ _keyword_|Present a cheat sheet for _keyword_.|
 
