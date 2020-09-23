@@ -1,0 +1,61 @@
+#!/usr/bin/python3
+#     ____  _____ ______
+#    / __ \/ ___// ____/	script by Dennis Chaves
+#   / / / /\__ \/ /    		github.com/ismashbuttons 
+#  / /_/ /___/ / /___  		dennis@dennischaves.xyz
+# /_____//____/\____/   
+#                       
+# cheat
+# Show "cheat sheets" for various programming languages.
+# Enter the language you need and a keyword or concept for that language to
+# print out any notes you have stored.
+#
+# Dependencies: mdp - https://github.com/visit1985/mdp 
+#
+# Usage:    cheat LANG          print all cheat infor available for langeuage.
+#           cheat LANG KEYWORD  print cheat for a reserved word (if, elif,
+#                               while, for, etc.); or a keyword for a concept,
+#                               data type, method, or function. Seperate
+#                               multi-word keywords with `-` hyphens.
+#
+# Examples: cheat python
+#           cheat bash if
+#           cheat python list
+#           cheat bash test
+#           cheat bash for
+#           cheat bash command-substitution
+
+import sys, os, subprocess
+from pathlib import Path
+
+# config
+HOME = Path.home()
+LANG_DIR = HOME / '.local/share/cheat'
+
+# put each directory in ~/.local/share/cheat into a list
+LANGUAGES = os.listdir(LANG_DIR)
+
+# process inputs
+if len(sys.argv) == 2: # user supplied only 1 arg (lang)
+    LANG = sys.argv[1]
+    if LANG in LANGUAGES:
+        # View all keyword notes
+        for keywordFile in os.listdir(LANG_DIR / LANG):
+            fo1 = open(LANG_DIR / LANG / keywordFile, 'r')
+            fo2 = open(LANG_DIR / 'presenter.md', 'a')
+            content = fo1.read()
+            fo2.write(content)
+            fo1.close()
+            fo2.close()
+        subprocess.run(['mdp', LANG_DIR / 'presenter.md'])
+
+        # Clean-up
+        os.unlink(LANG_DIR / 'presenter.md')
+    else:
+        print("I don't have any cheats for that language")
+else:
+    LANG = sys.argv[1]
+    KEYWORD = sys.argv[2]
+    if LANG in LANGUAGES:
+        # Open keyword file in markdown presenter
+        subprocess.run(['mdp', LANG_DIR / LANG / KEYWORD])

@@ -1,0 +1,63 @@
+# 'for' loops in Bash
+
+## basic form:
+
+```bash
+for I in ITERABLE; do
+    # code to run
+    # goes here
+done
+```
+
+_I_ is a temporary variable used to hold the current iteration.
+_ITERABLE_ is any iterable data type. This can be a list, sequence of
+numbers, or anything else bash can sequentially pass through. You can 
+use command substitution to create an iterable like in this example:
+
+-----
+## Bash 'for' loop examples
+
+```bash
+for file in $(ls ~/.Downloads); do
+    echo $(file)
+done
+```
+
+__output:__  
+    Anatomy of the State_3.pdf
+    IMG_20200825_135133.jpg
+    IMG_20200825_135151.jpg
+    tk-Technological-Slavery.pdf
+
+-----
+## Bash 'for' loop examples
+
+```bash
+for i in $(seq 1 5); do
+    echo 'line ' $(i)
+done
+```
+
+__output:__  
+    line 1
+    line 2
+    line 3
+    line 4
+    line 5
+
+-----
+## Bash 'for' loop examples
+
+```bash
+count=0
+for textFile in $(ls *.txt); do
+    count=$((count + 1))
+done
+
+echo "There are ${count} text files in this directory."
+```
+
+__output:__  
+    "There are 5 text files in this directory."
+
+-----

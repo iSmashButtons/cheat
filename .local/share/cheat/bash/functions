@@ -1,0 +1,53 @@
+# Bash functions
+
+As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing `function my_func { _MY-CODE_ }`. Calling a function is just like calling another program, you just write its name. 
+
+## basic form:
+
+```bash
+#!/bin/bash
+function myFunction {
+    # code to run
+    # goes here
+}
+```
+
+-----
+## Bash simple function examples
+
+```bash
+#!/bin/bash
+function hello {
+    echo 'Hello world!'
+}
+```
+
+-----
+## Bash simple function examples
+
+```bash
+#!/bin/bash
+function halfer {
+    echo 'Give me a number, and I'll half it!'
+    read -p '>>> ' number
+    echo $(( number / 2 ))
+}
+```
+
+-----
+## Bash: function with parameters
+
+Pass a function parameters just like you would pass arguments to any other program: `myFunc arg1 arg2`. You can access them in the function just like you access command line arguments with `$1`, `$2`, etc.
+
+```bash
+#!/bin/bash
+function iRepeatYou {
+    # enter 1 word
+    echo $1
+}
+iRepeatYou foobar
+```
+
+__output__:  
+
+    foobar

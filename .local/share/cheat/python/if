@@ -1,0 +1,31 @@
+# 'if' conditionals in Python
+
+## Basic 'if' form:
+
+    if _conditional-expression_:
+        # Code to run
+
+-----
+## Basic 'if' example:
+
+```python    
+if var > 3:
+    print(var)
+```
+ 
+-----
+## if/elif/else:
+
+```python
+if thing == otherThing:
+    # code to run
+    # goes here
+elif thisThing > thatThing:
+    # code to run
+    # goes here
+else:
+    # code to run
+    # goes here
+```
+
+`elif` and `else` are not required.

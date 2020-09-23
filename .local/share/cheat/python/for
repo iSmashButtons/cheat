@@ -1,0 +1,58 @@
+# Python 'for' loops
+
+## Basic 'for' loop form:
+
+    for VAR in ITERABLE:
+        # code to run
+        # goes here
+
+_VAR_ is a temporary variable, which holds the current value as the loop
+iterates through the ITERABLE data type.
+
+_ITERABLE_ is any iteratble data type: a range of numbers, a list, a
+dictionary, a tuple, etc.
+
+-----
+## 'for' loop examples:
+
+```python
+for i in range(1,5):
+    print(i)
+```
+
+__output:__  
+
+    1
+    2
+    3
+    4
+
+-----
+## 'for' loop examples:
+
+```python
+listVar = ['some', 'list', 'items']
+for item in listVar:
+    print(listVar.upper())
+```
+
+__output:__  
+
+    SOME
+    LIST
+    ITEMS
+
+-----
+## 'for' loop examples:
+
+```python
+dictVar = {'key1': 'value1', 'key2': 'value2'}
+for key in dictVar.keys():
+    print(key)
+```
+
+__output:__  
+
+    key1
+    key2
+

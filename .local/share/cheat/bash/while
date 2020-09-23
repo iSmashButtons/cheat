@@ -1,0 +1,29 @@
+# Bash 'while' loops
+
+## Basic 'while' loop form:
+
+    while CONDITION; do
+        # code to run
+        # goes here
+    done
+
+Where __CONDITION__ is a Boolean value, usually represented with the `[]` compound command.
+
+-----
+## Bash 'while' loop example:
+
+```bash
+counter=0
+while [ $counter -lt 5 ]; do
+    echo "The counter is ${counter}"
+    let counter=counter+1
+done
+```
+
+__output:__  
+    The counter is 0
+    The counter is 1
+    The counter is 2
+    The counter is 3
+    The counter is 4
+
